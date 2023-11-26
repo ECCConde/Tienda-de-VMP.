@@ -79,7 +79,7 @@ export default {
           name: "Vitamina D",
           description:
             "Importante para la salud ósea y el sistema inmunológico.",
-          imageUrl: "src/assets/vitamin_d.png",
+          imageUrl: "/vitamin_d.png",
           price: 10.99,
           category: "Vitaminas",
           stock: 50,
@@ -89,7 +89,7 @@ export default {
           name: "Vitamina C",
           description:
             "Antioxidante, ayuda en la recuperación y apoya al sistema inmunológico.",
-          imageUrl: "src/assets/vitamin_c.png",
+          imageUrl: "/vitamin_c.png",
           price: 12.99,
           category: "Vitaminas",
           stock: 30,
@@ -99,7 +99,7 @@ export default {
           name: "Vitamina B12",
           description:
             "Esencial para la formación de glóbulos rojos y el funcionamiento del sistema nervioso.",
-          imageUrl: "src/assets/vitamin_b12.png",
+          imageUrl: "/vitamin_b12.png",
           price: 14.99,
           category: "Vitaminas",
           stock: 20,
@@ -109,7 +109,7 @@ export default {
           name: "Vitamina A",
           description:
             "Importante para la visión, el sistema inmunológico y la salud de la piel.",
-          imageUrl: "src/assets/vitamin_a.png",
+          imageUrl: "/vitamin_a.png",
           price: 16.99,
           category: "Vitaminas",
           stock: 25,
@@ -119,7 +119,7 @@ export default {
           name: "Vitamina E",
           description:
             "Propiedades antioxidantes y ayuda a mantener la piel sana.",
-          imageUrl: "src/assets/vitamin_e.png",
+          imageUrl: "/vitamin_e.png",
           price: 18.99,
           category: "Vitaminas",
           stock: 15,
@@ -128,7 +128,7 @@ export default {
           id: 6,
           name: "Calcio",
           description: "Esencial para la salud ósea y dental.",
-          imageUrl: "src/assets/calcium.png",
+          imageUrl: "/calcium.png",
           price: 20.99,
           category: "Minerales",
           stock: 40,
@@ -138,7 +138,7 @@ export default {
           name: "Hierro",
           description:
             "Importante para la formación de hemoglobina y el transporte de oxígeno en la sangre.",
-          imageUrl: "src/assets/iron.png",
+          imageUrl: "/iron.png",
           price: 22.99,
           category: "Minerales",
           stock: 35,
@@ -148,7 +148,7 @@ export default {
           name: "Magnesio",
           description:
             "Contribuye al funcionamiento muscular y nervioso, así como a la formación ósea.",
-          imageUrl: "src/assets/magnesium.png",
+          imageUrl: "/magnesium.png",
           price: 24.99,
           category: "Minerales",
           stock: 30,
@@ -158,7 +158,7 @@ export default {
           name: "Zinc",
           description:
             "Participa en el sistema inmunológico y contribuye a la salud de la piel.",
-          imageUrl: "src/assets/zinc.png",
+          imageUrl: "/zinc.png",
           price: 26.99,
           category: "Minerales",
           stock: 25,
@@ -168,7 +168,7 @@ export default {
           name: "Yodo",
           description:
             "Necesario para la función tiroidea y el desarrollo adecuado.",
-          imageUrl: "src/assets/iodine.png",
+          imageUrl: "/iodine.png",
           price: 28.99,
           category: "Minerales",
           stock: 20,
@@ -177,7 +177,7 @@ export default {
           id: 11,
           name: "Proteína en polvo",
           description: "Ayuda en la reparación y construcción muscular.",
-          imageUrl: "src/assets/protein_powder.png",
+          imageUrl: "/protein_powder.png",
           price: 30.99,
           category: "Suplementos Alimenticios",
           stock: 15,
@@ -187,7 +187,7 @@ export default {
           name: "Omega-3 (ácidos grasos esenciales)",
           description:
             "Beneficioso para la salud cardiovascular y el funcionamiento cerebral.",
-          imageUrl: "src/assets/omega_3.png",
+          imageUrl: "/omega_3.png",
           price: 32.99,
           category: "Suplementos Alimenticios",
           stock: 10,
@@ -197,7 +197,7 @@ export default {
           name: "Glutamina",
           description:
             "Importante para la recuperación muscular y el sistema inmunológico.",
-          imageUrl: "src/assets/glutamine.png",
+          imageUrl: "/glutamine.png",
           price: 34.99,
           category: "Suplementos Alimenticios",
           stock: 18,
@@ -207,7 +207,7 @@ export default {
           name: "Creatina",
           description:
             "Contribuye a la mejora del rendimiento atlético y la fuerza muscular.",
-          imageUrl: "src/assets/creatine.png",
+          imageUrl: "/creatine.png",
           price: 36.99,
           category: "Suplementos Alimenticios",
           stock: 12,
@@ -217,7 +217,7 @@ export default {
           name: "Fibra alimentaria",
           description:
             "Promueve la salud digestiva y ayuda en el control del peso.",
-          imageUrl: "src/assets/fiber.png",
+          imageUrl: "/fiber.png",
           price: 38.99,
           category: "Suplementos Alimenticios",
           stock: 25,

@@ -2,6 +2,7 @@
 <template>
   <div class="product-card">
     <img :src="product.imageUrl" :alt="product.name" class="product-image">
+
     <div class="product-details">
       <h3 class="product-name">{{ product.name }}</h3>
       <p class="product-description">{{ product.description }}</p>
