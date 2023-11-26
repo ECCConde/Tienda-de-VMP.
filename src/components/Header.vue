@@ -52,7 +52,7 @@
   }
   
   .logo img {
-    max-height: 50px; /* Ajusta la altura según tus necesidades */
+    max-height: 100px; /* Ajusta la altura según tus necesidades */
   }
   
   .user-info {
