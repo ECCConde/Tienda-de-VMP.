@@ -1,7 +1,12 @@
-# Vue 3 + Vite
+# Tienda Online De Vitaminas MInerales y Suplementos Proteicos. *VMP*
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Descripción breve del proyecto que destaque sus características principales.
 
-## Recommended IDE Setup
+## Framework Utilizado
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+El proyecto está construido utilizando [Vue 3 + Vite], aprovechando sus capacidades para [menciona brevemente las ventajas clave del framework].
+
+## Página del Proyecto
+
+Visita [https://tienda-de-vmp.pages.dev/](#) para ver el proyecto en acción.
+
