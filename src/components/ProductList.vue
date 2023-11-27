@@ -1,13 +1,13 @@
-<!-- ProductList.vue -->
-
 <template>
   <div class="product-list-container">
     <div v-if="!isLoggedIn">
-      <h3>Inicio de Sesión / Registro</h3>
+      <div style="text-align: center">
+        <h1>Lista de productos</h1>
+      </div>
       <AuthForm />
     </div>
     <div class="title-bar">
-      <h1>Lista de productos</h1>
+
       <div class="user-info">
         <p v-if="isLoggedIn">¡Bienvenido, {{ user.username }}!</p>
         <button v-if="isLoggedIn" @click="logout">Cerrar Sesión</button>
@@ -38,23 +38,35 @@
         <p v-if="isLoggedIn">¡Bienvenido, {{ user.username }}!</p>
       </div>
       <section class="product-section">
-      <h2>Productos Disponibles</h2>
-      <div class="product-list">
-        <ul>
-          <li v-for="product in filteredProducts" :key="product.id" class="product-item">
-            <Product :product="product" @addToCart="addToCart" @buyNow="buyNow" />
-            <span class="stock-info">Stock: {{ product.stock }}</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-      </div>
-      <button @click="toggleCartVisibility">Ver Carrito</button>
-      <Cart :cartItems="cartItems" :visible="cartVisible" @checkout="checkout" @clear-cart="clearCart" />
+        <h2>Productos Disponibles</h2>
+        <div class="product-list">
+          <ul>
+            <li
+              v-for="product in filteredProducts"
+              :key="product.id"
+              class="product-item"
+            >
+              <Product
+                :product="product"
+                @addToCart="addToCart"
+                @buyNow="buyNow"
+              />
+              <span class="stock-info">Stock: {{ product.stock }}</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <button @click="toggleCartVisibility">Ver Carrito</button>
+    <Cart
+      :cartItems="cartItems"
+      :visible="cartVisible"
+      @checkout="checkout"
+      @clear-cart="clearCart"
+    />
 
-      <!-- Incluir el componente Footer -->
-      <Footer />
-  
+    <!-- Incluir el componente Footer -->
+    <Footer />
   </div>
 </template>
 
@@ -256,63 +268,63 @@ export default {
     },
   },
   methods: {
-  addToCart(product) {
-    const existingCartItem = this.cartItems.find(
-      (item) => item.id === product.id
-    );
+    addToCart(product) {
+      const existingCartItem = this.cartItems.find(
+        (item) => item.id === product.id
+      );
 
-    if (existingCartItem) {
-      existingCartItem.quantity += 1;
-    } else {
-      this.cartItems.push({ ...product, quantity: 1 });
-    }
+      if (existingCartItem) {
+        existingCartItem.quantity += 1;
+      } else {
+        this.cartItems.push({ ...product, quantity: 1 });
+      }
 
-    const updatedProduct = this.productList.find(
-      (item) => item.id === product.id
-    );
-    if (updatedProduct) {
-      updatedProduct.stock -= 1;
-    }
-  },
-  toggleCartVisibility() {
-    this.cartVisible = !this.cartVisible;
-  },
-  checkout() {
-    const insufficientStockProducts = this.cartItems.filter(
-      (item) => item.quantity > item.stock
-    );
-
-    if (insufficientStockProducts.length > 0) {
-      alert("No hay suficiente stock para algunos productos en el carrito.");
-      return;
-    }
-
-    this.cartItems.forEach((item) => {
       const updatedProduct = this.productList.find(
-        (product) => product.id === item.id
+        (item) => item.id === product.id
       );
       if (updatedProduct) {
-        updatedProduct.stock -= item.quantity;
+        updatedProduct.stock -= 1;
       }
-    });
+    },
+    toggleCartVisibility() {
+      this.cartVisible = !this.cartVisible;
+    },
+    checkout() {
+      const insufficientStockProducts = this.cartItems.filter(
+        (item) => item.quantity > item.stock
+      );
 
-    alert("Compra realizada con éxito");
-    this.cartItems = [];
-  },
-  clearCart() {
-    this.cartItems = [];
-  },
-  navigateToCategory(categoryName) {
-    if (categoryName) {
-      this.selectedCategory = categoryName;
-    } else {
-      this.selectedCategory = null;
-    }
-  },
-  logout() {
-    this.$store.commit("logout");
-  },
-  buyNow(product) {
+      if (insufficientStockProducts.length > 0) {
+        alert("No hay suficiente stock para algunos productos en el carrito.");
+        return;
+      }
+
+      this.cartItems.forEach((item) => {
+        const updatedProduct = this.productList.find(
+          (product) => product.id === item.id
+        );
+        if (updatedProduct) {
+          updatedProduct.stock -= item.quantity;
+        }
+      });
+
+      alert("Compra realizada con éxito");
+      this.cartItems = [];
+    },
+    clearCart() {
+      this.cartItems = [];
+    },
+    navigateToCategory(categoryName) {
+      if (categoryName) {
+        this.selectedCategory = categoryName;
+      } else {
+        this.selectedCategory = null;
+      }
+    },
+    logout() {
+      this.$store.commit("logout");
+    },
+    buyNow(product) {
       const selectedQuantity = prompt(
         `Ingrese la cantidad de "${product.name}" que desea comprar:`,
         "1"
@@ -345,13 +357,13 @@ export default {
         0
       );
 
-      const confirmationMessage = `Precio total: $${totalCost.toFixed(2)}\n¿Desea confirmar la compra?`;
+      const confirmationMessage = `Precio total: $${totalCost.toFixed(
+        2
+      )}\n¿Desea confirmar la compra?`;
 
       if (window.confirm(confirmationMessage)) {
         this.cartItems.forEach((item) => {
-          const updatedProduct = this.productList.find(
-            (p) => p.id === item.id
-          );
+          const updatedProduct = this.productList.find((p) => p.id === item.id);
           if (updatedProduct) {
             updatedProduct.stock -= item.quantity;
           }
@@ -361,9 +373,7 @@ export default {
         this.cartItems = [];
       } else {
         // Lógica adicional si se cancela la compra
-        console.log(
-          "Compra cancelada. Implementa aquí la lógica necesaria."
-        );
+        console.log("Compra cancelada. Implementa aquí la lógica necesaria.");
       }
     },
   },
@@ -382,7 +392,9 @@ export default {
 
 .layout-container {
   display: flex;
-  flex-wrap: wrap; /* Añade esta línea para permitir que los elementos se envuelvan en varias líneas */
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px; /* Puedes ajustar este valor según tus necesidades */
 }
 
 .categories-sidebar {
@@ -409,10 +421,13 @@ export default {
 
 .categories-sidebar li:hover {
   background-color: #ddd;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .product-section {
-  flex-basis: 68%; /* Ajusta el valor según tu preferencia para controlar el ancho de cada columna */
+  flex-basis: 70%;
   margin-top: 20px;
 }
 .title-bar {
@@ -420,6 +435,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .user-info {
@@ -445,6 +461,9 @@ button:hover {
 }
 
 .cart-icon img {
+  position: absolute;
+  top: 20px;
+  right: 400px;
   width: 50px;
   height: 50px;
 }
@@ -452,7 +471,7 @@ button:hover {
 .cart-item-count {
   position: absolute;
   top: -3px;
-  right: -3px;
+  right: 400px;
   background-color: #e74c3c;
   color: #fff;
   border-radius: 50%;
@@ -466,11 +485,12 @@ button:hover {
 .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 20px;
   overflow: hidden;
+  padding: 5px;
   transition: transform 0.3s ease-in-out;
-  width: 90%; /* Ajusta el ancho al 100% para ocupar todo el espacio disponible en su contenedor */
-  box-sizing: border-box; /* Añade esta línea para incluir el relleno y el borde en el ancho total */
+  width: 60%;
+  box-sizing: border-box;
 }
 </style>

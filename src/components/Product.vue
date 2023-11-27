@@ -40,10 +40,9 @@ export default {
 
 <style scoped>
 .product-image {
-  max-width: 40%; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
-  height: auto; /* Hace que la altura se ajuste automáticamente para mantener la proporción original */
+  max-width: 30%00px; 
+  height: auto; 
 }
-/* Estilos específicos del componente Product */
 .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -51,9 +50,8 @@ export default {
   margin-bottom: 20px;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
-  width: 30%; /* Ajusta el ancho al 100% para ocupar todo el espacio disponible en su contenedor */
-  box-sizing: border-box; /* Añade esta línea para incluir el relleno y el borde en el ancho total */
-}
+  width: 100%; 
+  }
 
 .product-card:hover {
   transform: scale(1.05);
