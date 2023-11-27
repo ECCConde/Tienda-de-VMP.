@@ -1,4 +1,4 @@
-/* Reset de estilos y configuraciones generales */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,6 @@ body {
   color: #222222;
 }
 
-/* Contenedor principal */
 .container {
   max-width: 1200px;
   margin: 0 auto;

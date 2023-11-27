@@ -65,8 +65,6 @@
       @checkout="checkout"
       @clear-cart="clearCart"
     />
-
-    <!-- Incluir el componente Footer -->
     <Footer />
   </div>
 </template>
@@ -267,18 +265,20 @@ export default {
     user() {
       return this.$store.state.user;
     },
+    totalCartItems() {
+    return this.cartItems.reduce((total, item) => total + item.quantity, 0);
+  },
   },
   methods: {
     addToCart(product) {
-      const existingCartItem = this.cartItems.find(
-        (item) => item.id === product.id
-      );
+  const existingCartItem = this.cartItems.find((item) => item.id === product.id);
 
-      if (existingCartItem) {
-        existingCartItem.quantity += 1;
-      } else {
-        this.cartItems.push({ ...product, quantity: 1 });
-      }
+  if (existingCartItem) {
+    existingCartItem.quantity += 1;
+  } else {
+    this.cartItems.push({ ...product, quantity: 1 });
+  }
+
 
       const updatedProduct = this.productList.find(
         (item) => item.id === product.id
