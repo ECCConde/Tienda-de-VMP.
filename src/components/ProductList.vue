@@ -1,9 +1,7 @@
 <template>
   <div class="product-list-container">
     <div v-if="!isLoggedIn">
-      <div style="text-align: center">
-        <h1>Lista de productos</h1>
-      </div>
+     
       <AuthForm />
     </div>
     <div class="title-bar">
@@ -22,6 +20,9 @@
         <span class="cart-item-count">{{ cartItems.length }}</span>
       </div>
     </div>
+    <div style="text-align: center">
+        <h1>Lista de productos</h1>
+      </div>
     <div class="layout-container">
       <div class="categories-sidebar">
         <h3>Categorías</h3>
@@ -372,8 +373,7 @@ export default {
         alert("Compra realizada con éxito");
         this.cartItems = [];
       } else {
-        // Lógica adicional si se cancela la compra
-        console.log("Compra cancelada. Implementa aquí la lógica necesaria.");
+        console.log("Compra cancelada.");
       }
     },
   },
@@ -394,7 +394,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 1200px; /* Puedes ajustar este valor según tus necesidades */
+  max-width: 1200px; 
 }
 
 .categories-sidebar {

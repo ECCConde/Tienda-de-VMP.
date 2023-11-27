@@ -1,5 +1,3 @@
-<!-- src/components/Header.vue -->
-
 <template>
     <header>
       <div class="header-content">
@@ -37,7 +35,6 @@
   </script>
   
   <style scoped>
-  /* Estilos específicos del componente Header */
   header {
     background-color: #3498db;
     color: #fff;
@@ -52,7 +49,7 @@
   }
   
   .logo img {
-    max-height: 100px; /* Ajusta la altura según tus necesidades */
+    max-height: 100px;
   }
   
   .user-info {

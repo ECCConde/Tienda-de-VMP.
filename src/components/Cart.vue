@@ -44,16 +44,15 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos específicos del componente Cart */
 .cart-container {
   max-width: 400px;
-  margin: 10px; /* Agregado para separar del borde de la ventana */
+  margin: 10px; 
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   position: fixed;
-  top: 400px; /* Fijar en la parte superior */
-  right: 0; /* Fijar en la parte derecha */
+  top: 400px; 
+  right: 0; 
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
